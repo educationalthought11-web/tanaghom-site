@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>مؤسسة التناغم الاجتماعي</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #005f73;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    header img {
+      max-width: 100px;
+      margin-bottom: 10px;
+    }
+    nav {
+      background-color: #e0e0e0;
+      text-align: center;
+      padding: 10px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #005f73;
+      font-weight: bold;
+    }
+    section {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #005f73;
+      margin-top: 40px;
+    }
+    ul {
+      padding-right: 20px;
+    }
+    input, select, button {
+      padding: 8px;
+      margin: 5px 0;
+      width: 100%;
+      max-width: 300px;
+      font-size: 16px;
+    }
+    #result {
+      font-weight: bold;
+      color: #0077b6;
+      margin-top: 10px;
+    }
+    footer {
+      background-color: #005f73;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://i.ibb.co/svNnRx7m/1.png" alt="شعار التناغم الاجتماعي">
+  <h1>Al Tanaghom Al Ijtemaei Lifestyle Development Consulting</h1>
+  <p>مؤسسة تربوية ثقافية تحمل رسالة إصلاحية عميقة</p>
+</header>
+
+<nav>
+  <a href="#dream">شاركنا الحلم</a>
+  <a href="#calculator">حاسبة الأسعار</a>
+  <a href="#credentials">المؤهلات المهنية</a>
+  <a href="#contact">التواصل</a>
+</nav>
+
+<section id="dream">
+  <h2>شاركنا الحلم</h2>
+  <p>نحن لا نقدم خدمات فقط، بل نبني رؤى. مؤسسة التناغم الاجتماعي هي دعوة مفتوحة لكل من يؤمن أن التعليم يمكن أن يكون إنسانيًا، وأن الإصلاح يبدأ من الداخل. شاركنا حلمك، وسنصممه معًا ليصبح واقعًا مؤثرًا.</p>
+</section>
+
+<section id="calculator">
+  <h2>حاسبة الأسعار</h2>
+  <p>احسب تكلفة الخدمة بناءً على عدد الجلسات ونوع البرنامج:</p>
+  <label>عدد الجلسات:</label>
+  <input type="number" id="sessions" placeholder="مثلاً: 5">
+  <label>نوع البرنامج:</label>
+  <select id="program">
+    <option value="basic">برنامج أساسي</option>
+    <option value="advanced">برنامج متقدم</option>
+    <option value="custom">برنامج مخصص</option>
+  </select>
+  <button onclick="calculate()">احسب التكلفة</button>
+  <div id="result"></div>
+</section>
+
+<section id="credentials">
+  <h2>المؤهلات المهنية</h2>
+  <p>تستند خدماتنا إلى خبرة ميدانية تتجاوز 18 عامًا في جميع المراحل التعليمية، وإشراف مباشر على تأسيس وتشغيل مؤسسات تربوية. ندمج الفنون المسرحية في التعليم، ونصمم برامج ثقافية مبتكرة، ونقدم استشارات دقيقة في الهيكل الإداري والتشغيلي للمدارس. هذه ليست شهادات معلقة، بل أثر مهني حيّ نضعه في خدمة المجتمع.</p>
+</section>
+
+<section id="contact">
+  <h2>التواصل</h2>
+  <p><strong>المدير العام:</strong> محمد عوض</p>
+  <p><strong>البريد الإلكتروني:</strong> mhtw100@gmail.com</p>
+  <p><strong>الهاتف:</strong> +971 50 401 3720</p>
+  <p><strong>الرخصة التجارية:</strong> CN-60601120</p>
+</section>
+
+<footer>
+  &#169; 2025 مؤسسة التناغم الاجتماعي – جميع الحقوق محفوظة  
+  <br>تم التصميم وفقًا لنهج المؤسسة الإصلاحي، وبروح تربوية ثقافية مستقلة
+</footer>
+
+<script>
+  function calculate() {
+    const sessions = parseInt(document.getElementById('sessions').value);
+    const program = document.getElementById('program').value;
+    let rate = 0;
+
+    if (program === 'basic') rate = 150;
+    else if (program === 'advanced') rate = 250;
+    else if (program === 'custom') rate = 400;
+
+    if (!isNaN(sessions) && sessions > 0) {
+      const total = sessions * rate;
+      document.getElementById('result').innerText = `التكلفة التقديرية: ${total} درهم إماراتي`;
+    } else {
+      document.getElementById('result').innerText = 'يرجى إدخال عدد الجلسات بشكل صحيح.';
+    }
+  }
+</script>
+
+</body>
+</html>
