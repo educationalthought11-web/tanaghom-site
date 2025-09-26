@@ -48,6 +48,39 @@
     ul {
       padding-right: 20px;
     }
+    button {
+      background-color: #005f73;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0a9396;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    #result {
+      font-weight: bold;
+      color: #005f73;
+      margin-top: 10px;
+    }
+    .message {
+      background-color: #e0f7fa;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 10px;
+      display: none;
+    }
     footer {
       background-color: #005f73;
       color: white;
@@ -63,13 +96,17 @@
   <img src="رابط_الشعار_النهائي" alt="شعار التناغم الاجتماعي">
   <h1>مؤسسة التناغم الاجتماعي</h1>
   <p>منشأة استشارية مرخصة تعمل في مجال تطوير أسلوب الحياة، وتقديم الاستشارات التربوية والاجتماعية، ضمن إطار قانوني معتمد في دولة الإمارات العربية المتحدة.</p>
-  <p>الرخصة التجارية: CN-60601120</p>
+  <p>الرخصة التجارية: CN-6060120</p>
 </header>
 
 <nav>
   <a href="#about">من نحن</a>
   <a href="#services">الخدمات</a>
   <a href="#accreditation">الاعتماد</a>
+  <a href="#consultation">الاستشارة المهنية</a>
+  <a href="#article">المقال الافتتاحي</a>
+  <a href="#dream">شاركنا الحلم</a>
+  <a href="#privacy">سياسة الخصوصية</a>
   <a href="#contact">اتصل بنا</a>
 </nav>
 
@@ -78,7 +115,6 @@
   <p>
     مؤسسة التناغم الاجتماعي هي إحدى مؤسسات المجتمع المدني، تعمل على دعم المجتمع من خلال تقديم خدمات استشارية تربوية واجتماعية مرخصة، وفقًا للأنظمة المعتمدة في دولة الإمارات العربية المتحدة.  
     نحن لا نُقدّم أنفسنا كجهة إصلاحية أو توجيهية، بل نعتبر أنفسنا جسورًا للتواصل بين زوايا الرؤية المختلفة، نُسهم في اكتمال الصورة الإنسانية عبر التفاهم، التناغم، والانسجام.  
-    رحلتنا في عوالم الإبداع ليست دعوة للتفرد، بل مساحة لا متناهية من التشارك، نفتح فيها نوافذ للفكر، ونرحب بكل من يطرق باب هذه الصفحة، لأنها ليست لنا وحدنا، بل للجميع.  
     نؤمن أن الأرض التي نعمل عليها، في دولة ضربت مثالًا راقيًا في استيعاب التعدد، هي أرضٌ صالحة لاحتواء الجميع، وممهدة لمستقبل متناغم يليق بالإنسان.
   </p>
 </section>
@@ -98,7 +134,7 @@
 <section id="accreditation">
   <h2>الاعتماد الرسمي</h2>
   <ul>
-    <li>الرخصة التجارية: CN-60601120</li>
+    <li>الرخصة التجارية: CN-6060120</li>
     <li>السجل التجاري المعتمد</li>
     <li>بطاقة المنشأة الرسمية</li>
     <li>عضوية الغرفة التجارية</li>
@@ -106,9 +142,52 @@
   </ul>
 </section>
 
+<section id="consultation">
+  <h2>الاستشارة المهنية</h2>
+  <p style="color:#555; font-style:italic;">
+    السعر هنا رمزي، لأننا نؤمن أن القيم لا تُباع، بل تُهدى.  
+    نحن نُبقي الضمير المهني هو الحاكم، ونفتح بابًا للتلاقي لا للمقايضة.  
+    لعلنا جميعًا، كلٌ من زاوية رؤيته، نُكمل صورة إنسانية رائعة تستحق أن تسود.  
+    هذه الحاسبة ليست بوابة دفع، بل دعوة للتشارك، والتفهم، والاستمرار.
+  </p>
+  <form>
+    <label>نوع الخدمة:</label>
+    <select>
+      <option>استشارة تربوية فردية</option>
+      <option>جلسة تطوير مهني</option>
+      <option>خطة تواصل مدرسي</option>
+    </select>
+
+    <label>عدد الجلسات المطلوبة:</label>
+    <input type="number" min="1" max="10">
+
+    <button type="button" onclick="calculatePrice()">احسب التكلفة</button>
+  </form>
+  <p id="result"></p>
+</section>
+
+<section id="article">
+  <h2>المقال الافتتاحي</h2>
+  <p>الصحة النفسية في زمن الواجهات البرمجية</p>
+  <p>نص المقال الكامل يُدرج هنا لاحقًا حسب ما تزودني به.</p>
+</section>
+
+<section id="dream">
+  <h2>شاركنا الحلم</h2>
+  <p>هذه الصفحة ليست لنا وحدنا، بل لكل من يؤمن أن التربية رسالة، وأن التغيير يبدأ من الداخل.</p>
+  <button onclick="showMessage()">ضع بصمتك</button>
+  <div class="message" id="dreamMessage">
+    أنت الآن شريكنا في الحلم. شكرًا لإضافة بصمتك.
+  </div>
+</section>
+
+<section id="privacy">
+  <h2>سياسة الخصوصية</h2>
+  <p>نحن نحترم خصوصيتك. جميع البيانات المدخلة تُستخدم فقط لغرض تقديم الخدمة، ولا يتم مشاركتها مع أي جهة خارجية. هذه المنصة تلتزم بأعلى معايير الأمان والسرية.</p>
+</section>
+
 <section id="contact">
   <h2>اتصل بنا</h2>
-  <p>للتواصل المباشر أو طلب استشارة، يُرجى استخدام النموذج التالي أو مراسلتنا عبر البريد الإلكتروني الرسمي.</p>
   <form>
     <input type="text" placeholder="الاسم الكامل">
     <input type="email" placeholder="البريد الإلكتروني">
@@ -118,9 +197,14 @@
 </section>
 
 <footer>
+  بإشراف: محمد عوض | البريد الرسمي: mhtw100@gmail.com | البريد الإداري: EducationalThought@gmail.com  
   جميع الحقوق محفوظة © مؤسسة التناغم الاجتماعي 2025
 </footer>
 
-</body>
-</html>
+<script>
+  function calculatePrice() {
+    const service = document.querySelector('select').value;
+    const sessions = parseInt(document.querySelector('input[type="number"]').value);
+    let pricePerSession = 0;
 
+    if (service === "
